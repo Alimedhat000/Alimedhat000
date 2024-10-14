@@ -5,11 +5,15 @@ import os
 from xml.dom import minidom
 import time
 import hashlib
+from dotenv import load_dotenv
 
 # Fine-grained personal access token with All Repositories access:
 # Account permissions: read:Followers, read:Starring, read:Watching
 # Repository permissions: read:Commit statuses, read:Contents, read:Issues, read:Metadata, read:Pull Requests
 # Issues and pull requests permissions not needed at the moment, but may be used in the future
+load_dotenv('.env')
+os.environ['ACCESS_TOKEN'] = os.getenv('ACCESS_TOKEN')
+os.environ['USER_NAME'] = os.getenv('USER_NAME')
 HEADERS = {'authorization': 'token ' + os.environ['ACCESS_TOKEN']}
 USER_NAME = os.environ['USER_NAME']  # 'Andrew6rant'
 QUERY_COUNT = {'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0,
@@ -345,22 +349,21 @@ def stars_counter(data):
     return total_stars
 
 
-def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data):
+def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data):
     """
     Parse SVG files and update elements with my age, commits, stars, repositories, and lines written
     """
     svg = minidom.parse(filename)
     f = open(filename, mode='w', encoding='utf-8')
     tspan = svg.getElementsByTagName('tspan')
-    tspan[30].firstChild.data = age_data
-    tspan[65].firstChild.data = repo_data
-    tspan[67].firstChild.data = contrib_data
-    tspan[69].firstChild.data = commit_data
-    tspan[71].firstChild.data = star_data
-    tspan[73].firstChild.data = follower_data
-    tspan[75].firstChild.data = loc_data[2]
-    tspan[76].firstChild.data = loc_data[0] + '++'
-    tspan[77].firstChild.data = loc_data[1] + '--'
+    tspan[38].firstChild.data = age_data
+    tspan[71].firstChild.data = repo_data
+    # tspan[73].firstChild.data = commit_data
+    # tspan[71].firstChild.data = star_data
+    # tspan[73].firstChild.data = follower_data
+    # tspan[75].firstChild.data = loc_data[2]
+    # tspan[76].firstChild.data = loc_data[0] + '++'
+    # tspan[77].firstChild.data = loc_data[1] + '--'
     f.write(svg.toxml('utf-8').decode('utf-8'))
     f.close()
 
@@ -472,47 +475,49 @@ if __name__ == '__main__':
     age_data, age_time = perf_counter(
         daily_readme, datetime.datetime(2004, 1, 12))
     formatter('age calculation', age_time)
-    total_loc, loc_time = perf_counter(
-        loc_query, ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 7)
-    formatter('LOC (cached)',
-              loc_time) if total_loc[-1] else formatter('LOC (no cache)', loc_time)
-    commit_data, commit_time = perf_counter(commit_counter, 7)
-    star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])
+
+    # total_loc, loc_time = perf_counter(
+    #     loc_query, ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 7)
+
+    # formatter('LOC (cached)',
+    #           loc_time) if total_loc[-1] else formatter('LOC (no cache)', loc_time)
+    # commit_data, commit_time = perf_counter(commit_counter, 7)
+    # star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])
     repo_data, repo_time = perf_counter(graph_repos_stars, 'repos', ['OWNER'])
-    contrib_data, contrib_time = perf_counter(
-        graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])
-    follower_data, follower_time = perf_counter(follower_getter, USER_NAME)
+    # contrib_data, contrib_time = perf_counter(
+    #     graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])
+    # follower_data, follower_time = perf_counter(follower_getter, USER_NAME)
 
     # several repositories that I've contributed to have since been deleted.
-    if OWNER_ID == {'id': 'MDQ6VXNlcjU3MzMxMTM0'}:  # only calculate for user Andrew6rant
-        archived_data = add_archive()
-        for index in range(len(total_loc)-1):
-            total_loc[index] += archived_data[index]
-        contrib_data += archived_data[-1]
-        commit_data += int(archived_data[-2])
+    # if OWNER_ID == {'id': 'MDQ6VXNlcjU3MzMxMTM0'}:  # only calculate for user Andrew6rant
+    #     archived_data = add_archive()
+    #     for index in range(len(total_loc)-1):
+    #         total_loc[index] += archived_data[index]
+    #     contrib_data += archived_data[-1]
+    #     commit_data += int(archived_data[-2])
 
-    commit_data = formatter('commit counter', commit_time, commit_data, 7)
-    star_data = formatter('star counter', star_time, star_data)
+    # commit_data = formatter('commit counter', commit_time, commit_data, 7)
+    # star_data = formatter('star counter', star_time, star_data)
     repo_data = formatter('my repositories', repo_time, repo_data, 2)
-    contrib_data = formatter(
-        'contributed repos', contrib_time, contrib_data, 2)
-    follower_data = formatter(
-        'follower counter', follower_time, follower_data, 4)
+    # contrib_data = formatter(
+    #     'contributed repos', contrib_time, contrib_data, 2)
+    # follower_data = formatter(
+    #     'follower counter', follower_time, follower_data, 4)
 
-    for index in range(len(total_loc)-1):
-        # format added, deleted, and total LOC
-        total_loc[index] = '{:,}'.format(total_loc[index])
+    # for index in range(len(total_loc)-1):
+    #     # format added, deleted, and total LOC
+    #     total_loc[index] = '{:,}'.format(total_loc[index])
 
-    svg_overwrite('dark_mode.svg', age_data, commit_data, star_data,
-                  repo_data, contrib_data, follower_data, total_loc[:-1])
-    svg_overwrite('light_mode.svg', age_data, commit_data, star_data,
-                  repo_data, contrib_data, follower_data, total_loc[:-1])
+    svg_overwrite('Ali_Darkmode.svg', age_data, 0, 0,
+                  repo_data, 0, 0)
+    # svg_overwrite('TestAli_Darkode.svg', age_data, commit_data, star_data,
+    #               repo_data, contrib_data, follower_data)
 
     # move cursor to override 'Calculation times:' with 'Total function time:' and the total function time, then move cursor back
-    print('\033[F\033[F\033[F\033[F\033[F\033[F\033[F\033[F',
-          '{:<21}'.format('Total function time:'), '{:>11}'.format('%.4f' % (
-              user_time + age_time + loc_time + commit_time + star_time + repo_time + contrib_time)),
-          ' s \033[E\033[E\033[E\033[E\033[E\033[E\033[E\033[E', sep='')
+    print(
+        '{:<21}'.format('Total function time:'), '{:>11}'.format('%.4f' % (
+            user_time + age_time + 0 + 0 + repo_time + 0)),
+        sep='')
 
     print('Total GitHub GraphQL API calls:',
           '{:>3}'.format(sum(QUERY_COUNT.values())))
