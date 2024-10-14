@@ -52,7 +52,7 @@ text, tspan {white-space: pre;}
 <tspan x="750" y="50">——————</tspan>
 <tspan x="750" y="70" class="keyColor">OS</tspan>: <tspan class="valueColor">Windows 11, Android</tspan>
 <tspan x="750" y="90" class="keyColor">Uptime</tspan>: <tspan class="valueColor">20 years, 9 months, 2 days</tspan>
-<tspan x="750" y="110" class="keyColor">Host</tspan>: <tspan class="valueColor">University of Alexanderia</tspan>
+<tspan x="750" y="110" class="keyColor">Host</tspan>: <tspan class="valueColor">Alexandria University Faculty of Engineering</tspan>
 <tspan x="750" y="130" class="keyColor">Kernel</tspan>: <tspan class="valueColor">Communication and Elecronics Engineering</tspan>
 <tspan x="750" y="150" class="keyColor">IDE</tspan>: <tspan class="valueColor">VSCode, MblabX, NeoVim</tspan>
 <tspan x="750" y="190" class="keyColor">Languages</tspan>.<tspan class="keyColor">Programming</tspan>: <tspan class="valueColor">C, Python, C++, JavaScript,</tspan> <tspan class="commentColor">GDScript</tspan>
