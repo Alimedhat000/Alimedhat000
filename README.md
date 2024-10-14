@@ -1,5 +1,5 @@
-<a href="https://github.com/Andrew6rant/Andrew6rant">
+<a href="https://github.com/Alimedhat000/Alimedhat000">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="[https://raw.githubusercontent.com/Alimedhat000/Alimedhat000/main/dark_mode.svg](https://raw.githubusercontent.com/Alimedhat000/Alimedhat000/refs/heads/main/Ali_Darkmode.svg)">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Alimedhat000/Alimedhat000/main/dark_mode.svg">
   </picture>
 </a>
