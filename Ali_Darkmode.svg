@@ -68,7 +68,7 @@ text, tspan {white-space: pre;}
 <tspan x="750" y="470" class="keyColor">GitHub Stats</tspan>:
 <tspan x="750" y="490">——————</tspan>
 <tspan x="750" y="510" class="keyColor">Repos</tspan>: <tspan class="valueColor">13</tspan>
-<tspan x="750" y="530" class="keyColor">Commmits </tspan>: <tspan class="valueColor">211</tspan>
+<tspan x="750" y="530" class="keyColor">Commmits </tspan>: <tspan class="valueColor">191  </tspan>
 <tspan x="750" y="550" class="keyColor">Lines of Code</tspan>: <tspan class="valueColor">9442</tspan>
 
 
