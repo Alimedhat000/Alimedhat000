@@ -51,7 +51,7 @@ text, tspan {white-space: pre;}
 <tspan x="750" y="30">Ali@eren</tspan>
 <tspan x="750" y="50">——————</tspan>
 <tspan x="750" y="70" class="keyColor">OS</tspan>: <tspan class="valueColor">Windows 11, Android</tspan>
-<tspan x="750" y="90" class="keyColor">Uptime</tspan>: <tspan class="valueColor">20 years, 11 months, 1 day</tspan>
+<tspan x="750" y="90" class="keyColor">Uptime</tspan>: <tspan class="valueColor">20 years, 11 months, 1 day </tspan>
 <tspan x="750" y="110" class="keyColor">Host</tspan>: <tspan class="valueColor">Alexandria University Faculty of Engineering</tspan>
 <tspan x="750" y="130" class="keyColor">Kernel</tspan>: <tspan class="valueColor">Department of Electronics and Communications</tspan>
 <tspan x="750" y="150" class="keyColor">IDE</tspan>: <tspan class="valueColor">VSCode, MblapX, NeoVim</tspan>
@@ -68,7 +68,7 @@ text, tspan {white-space: pre;}
 <tspan x="750" y="470" class="keyColor">GitHub Stats</tspan>:
 <tspan x="750" y="490">——————</tspan>
 <tspan x="750" y="510" class="keyColor">Repos</tspan>: <tspan class="valueColor">25</tspan>
-<tspan x="750" y="530" class="keyColor">Commmits </tspan>: <tspan class="valueColor">259 </tspan>
+<tspan x="750" y="530" class="keyColor">Commmits </tspan>: <tspan class="valueColor">258</tspan>
 <tspan x="750" y="550" class="keyColor">Lines of Code</tspan>: <tspan class="valueColor">More Than I Can Count</tspan>
 
 
