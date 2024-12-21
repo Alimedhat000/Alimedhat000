@@ -226,6 +226,8 @@ def main():
 
     performance_data = []
 
+    Username = 'Alimedhat000'
+    tracker.commits_cache.update_commits(Username, tracker.parsed_data["Commits"],year= datetime.date.today().year)
     # Track age calculation
     age_data, age_time = tracker.performance_track(
         tracker.calculate_age, datetime.date(2004, 1, 12)

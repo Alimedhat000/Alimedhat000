@@ -5,6 +5,7 @@ from typing import Dict, Any
 
 
 class CommitsCacheManager:
+
     def __init__(self, cache_file: str = 'commits_cache.json'):
         """
         Initialize the commits cache manager.
@@ -24,7 +25,7 @@ class CommitsCacheManager:
         except (json.JSONDecodeError, IOError):
             return {}
 
-    def update_commits(self, username: str, year_commits: Dict[str, int]) -> None:
+    def update_commits(self, username: str, year_commits: int, year) -> None:
         """
         Update commits cache for a specific user.
         """
@@ -33,7 +34,7 @@ class CommitsCacheManager:
             self.cache[username] = {}
 
         # Update commits for each year
-        self.cache[username].update(year_commits)
+        self.cache[username][str(year)] = year_commits
 
         # Save updated cache
         self._save_cache()
