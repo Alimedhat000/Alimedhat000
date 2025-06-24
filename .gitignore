@@ -1,0 +1,6 @@
+.env
+cache/
+Test*.svg
+__pycache__
+Output.txt
+
