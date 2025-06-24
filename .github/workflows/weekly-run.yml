@@ -34,15 +34,12 @@ jobs:
 
       - name: Commit changes
         env:
-          GH_PAT: ${{ secrets.ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.name "Ali Medhat"
-          git config user.email "alimedhat000@users.noreply.github.com"
-
-          # ✅ Override remote BEFORE using git
-          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}.git
-          git remote -v  # Optional: confirm it's set
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add .
-          git commit -m "Weekly update from GitHub Actions $(date '+%Y-%m-%d')" || echo "No changes to commit"
-          git push origin HEAD:main
+          git commit -m "Weekly update from GitHub Actions $(date '+%Y-%m-%d')" || echo "No changes"
+          git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+
