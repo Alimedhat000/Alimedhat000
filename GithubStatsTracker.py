@@ -12,6 +12,7 @@ from CommitsCacheManager import *
 
 
 class GitHubStatsTracker:
+
     def __init__(self, username: str = None, access_token: str = None):
         """
         Initialize the GitHub Stats Tracker with authentication details.
@@ -31,8 +32,12 @@ class GitHubStatsTracker:
 
         self.headers = {'authorization': f'token {self.access_token}'}
         self.query_count: Dict[str, int] = {
-            'user_getter': 0, 'follower_getter': 0, 'graph_repos_stars': 0,
-            'recursive_loc': 0, 'graph_commits': 0, 'loc_query': 0
+            'user_getter': 0,
+            'follower_getter': 0,
+            'graph_repos_stars': 0,
+            'recursive_loc': 0,
+            'graph_commits': 0,
+            'loc_query': 0
         }
 
         # Fetch user data on initialization
@@ -50,7 +55,8 @@ class GitHubStatsTracker:
         if svg_content:
             return self.parser.parse_svg(svg_content)
 
-    def _make_graphql_request(self, query: str, variables: Dict) -> requests.Response:
+    def _make_graphql_request(self, query: str,
+                              variables: Dict) -> requests.Response:
         """
         Make a GraphQL request to GitHub API with error handling.
 
@@ -62,11 +68,12 @@ class GitHubStatsTracker:
             requests.Response: API response
         """
         try:
-            response = requests.post(
-                'https://api.github.com/graphql',
-                json={'query': query, 'variables': variables},
-                headers=self.headers
-            )
+            response = requests.post('https://api.github.com/graphql',
+                                     json={
+                                         'query': query,
+                                         'variables': variables
+                                     },
+                                     headers=self.headers)
             response.raise_for_status()
             return response
         except requests.RequestException as e:
@@ -108,14 +115,13 @@ class GitHubStatsTracker:
         def pluralize(unit: int) -> str:
             return 's' if unit != 1 else ''
 
-        return (
-            f"{diff.years} year{pluralize(diff.years)}, "
-            f"{diff.months} month{pluralize(diff.months)}, "
-            f"{diff.days} day{pluralize(diff.days)}"
-            f" {'🎂' if (diff.months == 0 and diff.days == 0) else ''}"
-        )
+        return (f"{diff.years} year{pluralize(diff.years)}, "
+                f"{diff.months} month{pluralize(diff.months)}, "
+                f"{diff.days} day{pluralize(diff.days)}"
+                f" {'🎂' if (diff.months == 0 and diff.days == 0) else ''}")
 
-    def get_repository_count(self, owner_affiliation: List[str] = ['OWNER']) -> int:
+    def get_repository_count(self,
+                             owner_affiliation: List[str] = ['OWNER']) -> int:
         """
         Get total repository count for the user.
 
@@ -145,7 +151,8 @@ class GitHubStatsTracker:
         response = self._make_graphql_request(query, variables)
         return response.json()['data']['user']['repositories']['totalCount']
 
-    def update_svg_file(self, filename: str, age_data: str, repo_data: str) -> None:
+    def update_svg_file(self, filename: str, age_data: str,
+                        repo_data: str) -> None:
         """
         Update SVG file with GitHub stats.
 
@@ -214,8 +221,9 @@ class GitHubStatsTracker:
         print(f'{"Total function time:":<21} {total_time:>11.4f}')
 
         # Print API call count
-        print(f'Total GitHub GraphQL API calls: {
-              sum(self.query_count.values()):>3}')
+        print(
+            f'Total GitHub GraphQL API calls: {sum(self.query_count.values()):>3}'
+        )
         for func_name, count in self.query_count.items():
             print(f'   {func_name + ":":<28} {count:>6}')
 
@@ -227,25 +235,21 @@ def main():
     performance_data = []
 
     Username = 'Alimedhat000'
-    tracker.commits_cache.update_commits(Username, tracker.parsed_data["Commits"],year= datetime.date.today().year)
+    tracker.commits_cache.update_commits(Username,
+                                         tracker.parsed_data["Commits"],
+                                         year=datetime.date.today().year)
     # Track age calculation
-    age_data, age_time = tracker.performance_track(
-        tracker.calculate_age, datetime.date(2004, 1, 12)
-    )
+    age_data, age_time = tracker.performance_track(tracker.calculate_age,
+                                                   datetime.date(2004, 1, 12))
     performance_data.append(('age calculation', (age_data, age_time)))
 
     # Track repository count
     repo_data, repo_time = tracker.performance_track(
-        tracker.get_repository_count
-    )
+        tracker.get_repository_count)
     performance_data.append(('my repositories', (repo_data, repo_time)))
 
     # Update SVG file
-    tracker.update_svg_file(
-        'Ali_Darkmode.svg',
-        age_data,
-        f"{repo_data:,}"
-    )
+    tracker.update_svg_file('Ali_Darkmode.svg', age_data, f"{repo_data:,}")
 
     # Print performance summary
     tracker.print_performance_summary(performance_data)
