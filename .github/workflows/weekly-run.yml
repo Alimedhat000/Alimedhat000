@@ -36,8 +36,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Ali Medhat"                        
+          git config user.email "alimedhat000@users.noreply.github.com"
           git add .
           git commit -m "Weekly update from GitHub Actions $(date '+%Y-%m-%d')" || echo "No changes to commit"
           git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
