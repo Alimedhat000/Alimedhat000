@@ -12,16 +12,21 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'  # Specify the Python version you want to use
 
-
+      - name: Inject Secrets
+        run: |
+          echo "USER_NAME=${{ secrets.USER_NAME }}" >> .env
+          echo "ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}" >> .env
+      
       - name: Run Python script
         run: |
+          pip install python-dotenv
           python GithubStatsTracker.py
 
       - name: Commit changes
