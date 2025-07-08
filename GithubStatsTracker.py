@@ -166,8 +166,8 @@ class GitHubStatsTracker:
 
         # Update specific elements (adjust indices as needed)
         tspan[38].firstChild.data = age_data
-        tspan[71].firstChild.data = repo_data
-        tspan[73].firstChild.data = self.commits_cache.get_total_commits()
+        tspan[70].firstChild.data = repo_data
+        tspan[72].firstChild.data = self.commits_cache.get_total_commits()
 
         with open(filename, mode='w', encoding='utf-8') as f:
             f.write(svg.toxml('utf-8').decode('utf-8'))
