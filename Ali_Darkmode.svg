@@ -54,7 +54,7 @@ text, tspan {white-space: pre;}
 <tspan x="750" y="90" class="keyColor">Uptime</tspan>: <tspan class="valueColor">21 years, 8 months, 16 days </tspan>
 <tspan x="750" y="110" class="keyColor">Host</tspan>: <tspan class="valueColor">Alexandria University Faculty of Engineering</tspan>
 <tspan x="750" y="130" class="keyColor">Kernel</tspan>: <tspan class="valueColor">Department of Electronics and Communications</tspan>
-<tspan x="750" y="150" class="keyColor">IDE</tspan>: <tspan class="valueColor">VSCode, MblapX, NeoVim</tspan>
+<tspan x="750" y="150" class="keyColor">IDE</tspan>: <tspan class="valueColor">NVim, VSCode, MblapX</tspan>
 <tspan x="750" y="190" class="keyColor">Languages</tspan>.<tspan class="keyColor">Programming</tspan>: <tspan class="valueColor">C, Python, C++, JavaScript, TypeScript</tspan>
 <tspan x="750" y="210" class="keyColor">Languages</tspan>.<tspan class="keyColor">Computer</tspan>: <tspan class="valueColor">HTML, CSS, React, TailwindCss, Express, LaTeX, MD</tspan>
 <tspan x="750" y="270" class="keyColor">Hobbies</tspan>.<tspan class="keyColor">Software</tspan>: <tspan class="valueColor">Web Development, Graphical Programming, Game Developement</tspan>
