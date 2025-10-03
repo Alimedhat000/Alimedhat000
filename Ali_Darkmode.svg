@@ -56,7 +56,7 @@ text, tspan {white-space: pre;}
 <tspan x="750" y="130" class="keyColor">Kernel</tspan>: <tspan class="valueColor">Department of Electronics and Communications</tspan>
 <tspan x="750" y="150" class="keyColor">IDE</tspan>: <tspan class="valueColor">NVim, VSCode, MblapX</tspan>
 <tspan x="750" y="190" class="keyColor">Languages</tspan>.<tspan class="keyColor">Programming</tspan>: <tspan class="valueColor">C, Python, C++, JavaScript, TypeScript</tspan>
-<tspan x="750" y="210" class="keyColor">Languages</tspan>.<tspan class="keyColor">Computer</tspan>: <tspan class="valueColor">HTML, CSS, React, TailwindCss, Express, LaTeX, MD</tspan>
+<tspan x="750" y="210" class="keyColor">Languages</tspan>.<tspan class="keyColor">Computer</tspan>: <tspan class="valueColor">HTML, CSS, React, NextJs, TailwindCss, Express</tspan>
 <tspan x="750" y="270" class="keyColor">Hobbies</tspan>.<tspan class="keyColor">Software</tspan>: <tspan class="valueColor">Web Development, Graphical Programming, Game Developement</tspan>
 <tspan x="750" y="290" class="keyColor">Hobbies</tspan>.<tspan class="keyColor">Hardware</tspan>: <tspan class="valueColor">General Embedded Systems stuff</tspan>
 <tspan x="750" y="330" class="keyColor">Contact</tspan>:
