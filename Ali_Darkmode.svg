@@ -69,7 +69,7 @@ text, tspan { white-space: pre; fill: #c0caf5; } /* default text */
 <tspan x="750" y="470" class="keyColor">GitHub Stats</tspan>:
 <tspan x="750" y="490">——————</tspan>
 <tspan x="750" y="510" class="keyColor">Repos</tspan>: <tspan class="valueColor">27</tspan>
-<tspan x="750" y="530" class="keyColor">Commits</tspan>: <tspan class="valueColor">733</tspan>
+<tspan x="750" y="530" class="keyColor">Commits</tspan>: <tspan class="valueColor">734</tspan>
 <tspan x="750" y="550" class="keyColor">Lines Of Code</tspan>: <tspan class="valueColor">Many, Many Lines</tspan>
 
 
