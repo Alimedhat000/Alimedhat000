@@ -48,29 +48,29 @@ text, tspan { white-space: pre; fill: #c0caf5; } /* default text */
 
 </text>
 
-<text id="info-panel" x="750" y="30" fill="#c9d1d9">
-<tspan id="username" x="750" y="30">Ali@eren</tspan>
-<tspan id="sep-1" x="750" y="50">——————</tspan>
-<tspan id="key-os" x="750" y="70" class="keyColor">OS</tspan>: <tspan id="val-os" class="valueColor">Arch Linux, Android</tspan>
-<tspan id="key-uptime" x="750" y="90" class="keyColor">Uptime</tspan>: <tspan id="val-uptime" class="valueColor">22 years, 1 month, 19 days </tspan>
-<tspan id="key-host" x="750" y="110" class="keyColor">Host</tspan>: <tspan id="val-host" class="valueColor">Alexandria University Faculty of Engineering</tspan>
-<tspan id="key-kernel" x="750" y="130" class="keyColor">Kernel</tspan>: <tspan id="val-kernel" class="valueColor">Department of Electronics and Communications</tspan>
-<tspan id="key-ide" x="750" y="150" class="keyColor">IDE</tspan>: <tspan id="val-ide" class="valueColor">NVim, VSCode, MblapX</tspan>
-<tspan id="key-lang-prog" x="750" y="190" class="keyColor">Languages</tspan>.<tspan id="key-lang-prog-2" class="keyColor">Programming</tspan>: <tspan id="val-lang-prog" class="valueColor">C, Python, C++, JS, TS</tspan>
-<tspan id="key-lang-fw" x="750" y="210" class="keyColor">Languages</tspan>.<tspan id="key-lang-fw-2" class="keyColor">Frameworks</tspan>: <tspan id="val-lang-fw" class="valueColor">React, NextJs, tw, Express, Pytorch</tspan>
-<tspan id="key-hobbies-sw" x="750" y="270" class="keyColor">Hobbies</tspan>.<tspan id="key-hobbies-sw-2" class="keyColor">Software</tspan>: <tspan id="val-hobbies-sw" class="valueColor">Web Dev, Machine Learning, Game Dev</tspan>
-<tspan id="key-hobbies-hw" x="750" y="290" class="keyColor">Hobbies</tspan>.<tspan id="key-hobbies-hw-2" class="keyColor">Hardware</tspan>: <tspan id="val-hobbies-hw" class="valueColor">General Embedded Systems stuff</tspan>
-<tspan id="key-contact" x="750" y="330" class="keyColor">Contact</tspan>:
-<tspan id="sep-2" x="750" y="350">——————</tspan>
-<tspan id="key-email" x="750" y="370" class="keyColor">Email</tspan>: <tspan id="val-email" class="valueColor">alimedhat000@gmail.com</tspan>
-<tspan id="key-linkedin" x="750" y="390" class="keyColor">LinkedIn</tspan>: <tspan id="val-linkedin" class="valueColor">Alimedhat000</tspan>
-<tspan id="key-leetcode" x="750" y="410" class="keyColor">LeetCode</tspan>: <tspan id="val-leetcode" class="valueColor">alisensei000</tspan>
-<tspan id="key-discord" x="750" y="430" class="keyColor">Discord</tspan>: <tspan id="val-discord" class="valueColor">itsnotme000</tspan>
-<tspan id="key-stats" x="750" y="470" class="keyColor">GitHub Stats</tspan>:
-<tspan id="sep-3" x="750" y="490">——————</tspan>
-<tspan id="key-repos" x="750" y="510" class="keyColor">Repos</tspan>: <tspan id="val-repos" class="valueColor">31</tspan>
-<tspan id="key-commits" x="750" y="530" class="keyColor">Commits</tspan>: <tspan id="val-commits" class="valueColor">816</tspan>
-<tspan id="key-loc" x="750" y="550" class="keyColor">Lines Of Code</tspan>: <tspan id="val-loc" class="valueColor">Many, Many Lines</tspan>
+<text id="info-panel" x="810" y="30" fill="#c9d1d9">
+<tspan id="username" x="810" y="30">Ali@eren</tspan>
+<tspan id="sep-1" x="810" y="50">——————</tspan>
+<tspan id="key-os" x="810" y="70" class="keyColor">OS</tspan>: <tspan id="val-os" class="valueColor">Arch Linux, Android</tspan>
+<tspan id="key-uptime" x="810" y="90" class="keyColor">Uptime</tspan>: <tspan id="val-uptime" class="valueColor">22 years, 1 month, 19 days </tspan>
+<tspan id="key-host" x="810" y="110" class="keyColor">Host</tspan>: <tspan id="val-host" class="valueColor">Alexandria University Faculty of Engineering</tspan>
+<tspan id="key-kernel" x="810" y="130" class="keyColor">Kernel</tspan>: <tspan id="val-kernel" class="valueColor">Department of Electronics and Communications</tspan>
+<tspan id="key-ide" x="810" y="150" class="keyColor">IDE</tspan>: <tspan id="val-ide" class="valueColor">NVim, VSCode, MblapX</tspan>
+<tspan id="key-lang-prog" x="810" y="190" class="keyColor">Languages</tspan>.<tspan id="key-lang-prog-2" class="keyColor">Programming</tspan>: <tspan id="val-lang-prog" class="valueColor">C, Python, C++, JS, TS</tspan>
+<tspan id="key-lang-fw" x="810" y="210" class="keyColor">Languages</tspan>.<tspan id="key-lang-fw-2" class="keyColor">Frameworks</tspan>: <tspan id="val-lang-fw" class="valueColor">React, NextJs, tw, Express, Pytorch</tspan>
+<tspan id="key-hobbies-sw" x="810" y="270" class="keyColor">Hobbies</tspan>.<tspan id="key-hobbies-sw-2" class="keyColor">Software</tspan>: <tspan id="val-hobbies-sw" class="valueColor">Web Dev, Machine Learning, Game Dev</tspan>
+<tspan id="key-hobbies-hw" x="810" y="290" class="keyColor">Hobbies</tspan>.<tspan id="key-hobbies-hw-2" class="keyColor">Hardware</tspan>: <tspan id="val-hobbies-hw" class="valueColor">General Embedded Systems stuff</tspan>
+<tspan id="key-contact" x="810" y="330" class="keyColor">Contact</tspan>:
+<tspan id="sep-2" x="810" y="350">——————</tspan>
+<tspan id="key-email" x="810" y="370" class="keyColor">Email</tspan>: <tspan id="val-email" class="valueColor">alimedhat000@gmail.com</tspan>
+<tspan id="key-linkedin" x="810" y="390" class="keyColor">LinkedIn</tspan>: <tspan id="val-linkedin" class="valueColor">Alimedhat000</tspan>
+<tspan id="key-leetcode" x="810" y="410" class="keyColor">LeetCode</tspan>: <tspan id="val-leetcode" class="valueColor">alisensei000</tspan>
+<tspan id="key-discord" x="810" y="430" class="keyColor">Discord</tspan>: <tspan id="val-discord" class="valueColor">itsnotme000</tspan>
+<tspan id="key-stats" x="810" y="470" class="keyColor">GitHub Stats</tspan>:
+<tspan id="sep-3" x="810" y="490">——————</tspan>
+<tspan id="key-repos" x="810" y="510" class="keyColor">Repos</tspan>: <tspan id="val-repos" class="valueColor">31</tspan>
+<tspan id="key-commits" x="810" y="530" class="keyColor">Commits</tspan>: <tspan id="val-commits" class="valueColor">816</tspan>
+<tspan id="key-loc" x="810" y="550" class="keyColor">Lines Of Code</tspan>: <tspan id="val-loc" class="valueColor">Many, Many Lines</tspan>
 
 
 </text>
