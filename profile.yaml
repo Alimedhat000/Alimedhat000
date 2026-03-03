@@ -1,0 +1,46 @@
+# ─────────────────────────────────────────────
+#  Profile configuration for Ali_Darkmode.svg
+#  Edit any value here — the script will write
+#  it into the SVG on the next run.
+# ─────────────────────────────────────────────
+
+svg:
+  file: assets/Ali_Darkmode.svg
+  width: 1380
+  height: 690
+  info_panel_x: 810   # x position of the right-hand info panel
+
+# ── Personal ──────────────────────────────────
+personal:
+  username_header: Ali@eren   # displayed in the SVG header line
+  birthday: 2004-01-12        # used to calculate the Uptime field
+
+# ── System ────────────────────────────────────
+system:
+  os: Arch Linux, Android
+  host: Alexandria University Faculty of Engineering
+  kernel: Department of Electronics and Communications
+  ide: NVim, VSCode, MblapX
+
+# ── Languages ─────────────────────────────────
+languages:
+  programming: C, Python, C++, JS, TS
+  frameworks: React, NextJs, tw, Express, Pytorch
+
+# ── Hobbies ───────────────────────────────────
+hobbies:
+  software: Web Dev, Machine Learning, Game Dev
+  hardware: General Embedded Systems stuff
+
+# ── Contact ───────────────────────────────────
+contact:
+  email: alimedhat000@gmail.com
+  linkedin: Alimedhat000
+  leetcode: alisensei000
+  discord: itsnotme000
+
+# ── GitHub Stats (dynamic — updated by script) ─
+# These are written automatically; edit only if
+# you want to override with a manual value.
+stats:
+  loc: Many, Many Lines   # only this stays static; repos/commits are fetched live

@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Python script
         run: |
-          python GithubStatsTracker.py
+          python run.py
 
       - name: Commit changes
         env:
@@ -40,7 +40,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add Ali_Darkmode.svg commits_cache.json
+          git add assets/Ali_Darkmode.svg data/commits_cache.json
           git commit -m "Weekly update from GitHub Actions $(date '+%Y-%m-%d')" || echo "No changes"
           git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
 

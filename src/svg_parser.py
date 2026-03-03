@@ -45,10 +45,9 @@ class SVGParser:
             return None
 
 
-# Example Usage
 if __name__ == "__main__":
     parser = SVGParser()
-    url = 'https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Alimedhat000'
+    url = "https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Alimedhat000"
 
     svg_content = parser.fetch_svg(url)
     if svg_content:

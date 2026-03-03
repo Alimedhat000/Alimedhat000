@@ -5,8 +5,7 @@ from typing import Dict, Any
 
 
 class CommitsCacheManager:
-
-    def __init__(self, cache_file: str = 'commits_cache.json'):
+    def __init__(self, cache_file: str = "data/commits_cache.json"):
         """
         Initialize the commits cache manager.
         """
@@ -19,7 +18,7 @@ class CommitsCacheManager:
         """
         try:
             if os.path.exists(self.cache_file):
-                with open(self.cache_file, 'r') as f:
+                with open(self.cache_file, "r") as f:
                     return json.load(f)
             return {}
         except (json.JSONDecodeError, IOError):
@@ -29,14 +28,10 @@ class CommitsCacheManager:
         """
         Update commits cache for a specific user.
         """
-        # Create user entry if not exists
         if username not in self.cache:
             self.cache[username] = {}
 
-        # Update commits for each year
         self.cache[username][str(year)] = year_commits
-
-        # Save updated cache
         self._save_cache()
 
     def get_cached_commits(self, username: str) -> Dict[str, int]:
@@ -50,7 +45,8 @@ class CommitsCacheManager:
         Save cache to JSON file.
         """
         try:
-            with open(self.cache_file, 'w') as f:
+            os.makedirs(os.path.dirname(self.cache_file), exist_ok=True)
+            with open(self.cache_file, "w") as f:
                 json.dump(self.cache, f, indent=4)
         except IOError as e:
             print(f"Error saving commits cache: {e}")
@@ -62,17 +58,13 @@ class CommitsCacheManager:
         current_year = datetime.datetime.now().year
 
         for username in list(self.cache.keys()):
-            # Filter out years older than max_age_years
             filtered_commits = {
                 str(year): commits
                 for year, commits in self.cache[username].items()
                 if current_year - int(year) <= max_age_years
             }
-
-            # Update cache for this user
             self.cache[username] = filtered_commits
 
-        # Save updated cache
         self._save_cache()
 
     def get_total_commits(self) -> int:

@@ -3,25 +3,34 @@ from dateutil import relativedelta
 import requests
 import os
 import time
-import hashlib
+import yaml
 from typing import Dict, List, Optional, Tuple
 from dotenv import load_dotenv
 from xml.dom import minidom
-from ReadGithubCardSVG import SVGParser
-from CommitsCacheManager import CommitsCacheManager
+from src.svg_parser import SVGParser
+from src.commits_cache import CommitsCacheManager
+
+
+def load_config(path: str = "profile.yaml") -> Dict:
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
 
 
 class GitHubStatsTracker:
-    def __init__(self, username: str = None, access_token: str = None):
+    def __init__(
+        self, username: str = None, access_token: str = None, config: Dict = None
+    ):
         """
         Initialize the GitHub Stats Tracker with authentication details.
 
         Args:
             username (str, optional): GitHub username. Defaults to environment variable.
             access_token (str, optional): GitHub personal access token. Defaults to environment variable.
+            config (dict, optional): Loaded profile config. Defaults to loading profile.yaml.
         """
         load_dotenv(".env")
 
+        self.config = config or load_config()
         self.username = username or os.getenv("USER_NAME")
         self.access_token = access_token or os.getenv("ACCESS_TOKEN")
 
@@ -150,7 +159,7 @@ class GitHubStatsTracker:
 
     def update_svg_file(self, filename: str, age_data: str, repo_data: str) -> None:
         """
-        Update SVG file with GitHub stats.
+        Update SVG file with static config values and live GitHub stats.
 
         Args:
             filename (str): Path to SVG file
@@ -158,19 +167,36 @@ class GitHubStatsTracker:
             repo_data (str): Repository count
         """
 
-        def get_element_by_id(doc, element_id: str):
+        def set_by_id(doc, element_id: str, value: str) -> None:
             for node in doc.getElementsByTagName("tspan"):
                 if node.getAttribute("id") == element_id:
-                    return node
+                    node.firstChild.data = value  # type: ignore[union-attr]
+                    return
             raise KeyError(f"SVG element with id='{element_id}' not found")
 
         svg = minidom.parse(filename)
+        cfg = self.config
 
-        get_element_by_id(svg, "val-uptime").firstChild.data = age_data  # type: ignore[union-attr]
-        get_element_by_id(svg, "val-repos").firstChild.data = repo_data  # type: ignore[union-attr]
-        get_element_by_id(svg, "val-commits").firstChild.data = str(
-            self.commits_cache.get_total_commits()
-        )  # type: ignore[union-attr]
+        # Static fields from config
+        set_by_id(svg, "username", str(cfg["personal"]["username_header"]))
+        set_by_id(svg, "val-os", str(cfg["system"]["os"]))
+        set_by_id(svg, "val-host", str(cfg["system"]["host"]))
+        set_by_id(svg, "val-kernel", str(cfg["system"]["kernel"]))
+        set_by_id(svg, "val-ide", str(cfg["system"]["ide"]))
+        set_by_id(svg, "val-lang-prog", str(cfg["languages"]["programming"]))
+        set_by_id(svg, "val-lang-fw", str(cfg["languages"]["frameworks"]))
+        set_by_id(svg, "val-hobbies-sw", str(cfg["hobbies"]["software"]))
+        set_by_id(svg, "val-hobbies-hw", str(cfg["hobbies"]["hardware"]))
+        set_by_id(svg, "val-email", str(cfg["contact"]["email"]))
+        set_by_id(svg, "val-linkedin", str(cfg["contact"]["linkedin"]))
+        set_by_id(svg, "val-leetcode", str(cfg["contact"]["leetcode"]))
+        set_by_id(svg, "val-discord", str(cfg["contact"]["discord"]))
+        set_by_id(svg, "val-loc", str(cfg["stats"]["loc"]))
+
+        # Dynamic fields — computed at runtime
+        set_by_id(svg, "val-uptime", age_data)
+        set_by_id(svg, "val-repos", repo_data)
+        set_by_id(svg, "val-commits", str(self.commits_cache.get_total_commits()))
 
         with open(filename, mode="w", encoding="utf-8") as f:
             f.write(svg.toxml("utf-8").decode("utf-8"))
@@ -213,7 +239,6 @@ class GitHubStatsTracker:
         for query_type, (result, diff) in performance_data:
             print(f"   {query_type + ':':<23}", end="")
 
-            # Print time in seconds or milliseconds based on duration
             if diff > 1:
                 print(f"{diff:>12.4f} s")
             else:
@@ -223,26 +248,28 @@ class GitHubStatsTracker:
 
         print(f"{'Total function time:':<21} {total_time:>11.4f}")
 
-        # Print API call count
         print(f"Total GitHub GraphQL API calls: {sum(self.query_count.values()):>3}")
         for func_name, count in self.query_count.items():
             print(f"   {func_name + ':':<28} {count:>6}")
 
 
 def main():
-    # Example usage
-    tracker = GitHubStatsTracker()
+    config = load_config()
+    tracker = GitHubStatsTracker(config=config)
 
     performance_data = []
 
-    Username = tracker.username
     tracker.commits_cache.update_commits(
-        Username, tracker.parsed_data["Commits"], year=datetime.date.today().year
+        tracker.username,  # type: ignore[arg-type]
+        tracker.parsed_data["Commits"],  # type: ignore[index]
+        year=datetime.date.today().year,
     )
+
+    # Birthday from config
+    birthday = datetime.date.fromisoformat(str(config["personal"]["birthday"]))
+
     # Track age calculation
-    age_data, age_time = tracker.performance_track(
-        tracker.calculate_age, datetime.date(2004, 1, 12)
-    )
+    age_data, age_time = tracker.performance_track(tracker.calculate_age, birthday)
     performance_data.append(("age calculation", (age_data, age_time)))
 
     # Track repository count
@@ -250,11 +277,8 @@ def main():
     performance_data.append(("my repositories", (repo_data, repo_time)))
 
     # Update SVG file
-    tracker.update_svg_file("Ali_Darkmode.svg", age_data, f"{repo_data:,}")
+    svg_file = config["svg"]["file"]
+    tracker.update_svg_file(svg_file, age_data, f"{repo_data:,}")
 
     # Print performance summary
     tracker.print_performance_summary(performance_data)
-
-
-if __name__ == "__main__":
-    main()

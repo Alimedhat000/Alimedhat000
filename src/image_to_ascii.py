@@ -13,7 +13,6 @@ from string import ascii_letters, digits, punctuation
 
 CONVERSION_CHARACTERS = punctuation + " "
 
-# Replace the problematic font loading with a system font
 if os.name == "nt":  # Windows
     base_font = ImageFont.truetype("arial.ttf", 20)
 else:  # Linux/Mac
