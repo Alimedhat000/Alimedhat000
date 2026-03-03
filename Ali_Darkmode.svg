@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" font-family="Andale Mono,AndaleMono,Consolas,monospace" width="1380px" height="690px" font-size="16px">
+<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" id="root" font-family="Andale Mono,AndaleMono,Consolas,monospace" width="1380px" height="690px" font-size="16px">
 <style>
 .keyColor { fill: #bb9af7; }       /* purple */
 .valueColor { fill: #7aa2f7; }     /* blue */
@@ -8,69 +8,69 @@
 text, tspan { white-space: pre; fill: #c0caf5; } /* default text */
 </style>
 
-<rect width="1380px" height="690px" fill="#1a1b26" rx="15"/>
+<rect id="background" width="1380px" height="690px" fill="#1a1b26" rx="15"/>
 
-<text x="15" y="30" class="ascii">
+<text id="ascii-art" x="15" y="30" class="ascii">
 
-<tspan x="15" y="30">*****,,....,,,******,,**//****************,,**.               ,,.,,,.,,,........</tspan>
-<tspan x="15" y="50">**************,**/*******,*********************.              .****,,,,,,,,,,,,,</tspan>
-<tspan x="15" y="70">**********,,,,*,,**/**//**,,,,*//***////////**/*.              ,***,,,,,,*,,*,**</tspan>
-<tspan x="15" y="90">********,****,**,,*/*********///************,..,,.              ,*,,,,,,,*,,****</tspan>
-<tspan x="15" y="110">*******,,********/(##(((////////*****//***,......,,.             ,,,,,,,,,**,,,,</tspan>
-<tspan x="15" y="130">***********,**,*/(######(/***/////***##//*...,,*,,,,**,,          ...,,,,,,,,,,,</tspan>
-<tspan x="15" y="150">*,,,************(######(/******/****%%#(**...,,.,,.....,,,,,*.     ,,***,......,</tspan>
-<tspan x="15" y="170">****************(#######(//*******/@&amp;%##(*....     . ....,,...,,,,..**,,,,,,,,,,</tspan>
-<tspan x="15" y="190">****,,*,,,,*****/#%##%%%%%%%%##@@&amp;&amp;&amp;%#((#%&amp;&amp;%(******////////****,,   .,,,,,,,,,,</tspan>
-<tspan x="15" y="210">*****,,,**,/##%%%%%%%%,.*%####((((//%@@@@@@@@&amp;&amp;(///*//////*...#%,,,,,.....,,,,,,</tspan>
-<tspan x="15" y="230">,,,,*/*/##%%%%%%%%%%(.,*##/**/(((#((&amp;@@@@@@@%**#(////////...*,.*%((*............</tspan>
-<tspan x="15" y="250">*(###%#%%%%%%%#/*******%@@&amp;%%#%@@@@@@@%*,*#&amp;&amp;@@@&amp;#//*,.....,/**/,...............</tspan>
-<tspan x="15" y="270">###%%%%%%%%%(****//(((&amp;@@@@@@@@@@@@@@@@&amp;&amp;@@@@@%((#(,..,,..*/**,.................</tspan>
-<tspan x="15" y="290">%%%%%%%%%%%(////*///(@@@@@@@@@@@@@@@&amp;%%%%%%&amp;&amp;@@@@@@@&amp;(..(&amp;%#(,...............,..</tspan>
-<tspan x="15" y="310">######%#(/****///(&amp;@@@@@@@@@@@@@@@@&amp;%###(((/&amp;@@@@@&amp;%%#,.......................,#</tspan>
-<tspan x="15" y="330">#####(////***/&amp;@@@@@@@@@@@@@@@@@@@@@@@@@&amp;&amp;%#(%&amp;@@@&amp;#(/....................**,/*.</tspan>
-<tspan x="15" y="350">###(///((%&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;&amp;@%#(((//...........,.......*,.,#.  </tspan>
-<tspan x="15" y="370">&amp;%(((((((&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;&amp;#(/,.....................,(*....</tspan>
-<tspan x="15" y="390">(((/((/(%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;%#(*................,.....,#.. ...</tspan>
-<tspan x="15" y="410">@%#%%%&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;%#/*................,.....,(*.......</tspan>
-<tspan x="15" y="430">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;%%#/,.................,.....,#.........</tspan>
-<tspan x="15" y="450">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;#(/,.     ............,,....,/*..........</tspan>
-<tspan x="15" y="470">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%/,.   .  .......,,.....,#............</tspan>
-<tspan x="15" y="490">@@@@@@@@&amp;@@@@@&amp;&amp;@&amp;&amp;&amp;&amp;@@@@@@@@@@@@@@@@@@@@@@@@@&amp;#*,........,,....,/*.............</tspan>
-<tspan x="15" y="510">@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;%%%%&amp;&amp;%%%%%#%#%&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@@@@@@@@@@@@@@@@@@&amp;(,,,*,.,..,#...............</tspan>
-<tspan x="15" y="530">%%&amp;%%%%&amp;%%#######(#(///****///(##%&amp;&amp;&amp;@@@@@@@@@@@@@@@@@@@@@@@@#//................</tspan>
-<tspan x="15" y="550">%%%%%######((((///*,,....,,.    ...,,*/(/#%&amp;@@@@@@@@@@@@@@@@*#,.................</tspan>
-<tspan x="15" y="570">####(####(////*,......,**/,....... .   . ....,/**//#&amp;@@@@@#//...................</tspan>
-<tspan x="15" y="590">((((///*,,.,,,*****////*/,,,,,,...................,,...,**#.....................</tspan>
-<tspan x="15" y="610">/**,..,**/*/////////*//,,,,,,,,,,,,,,,,,,,,,,,,,,/*,...,//......................</tspan>
-<tspan x="15" y="630">***//**////////////***,,,,,,,,,,,,,,,,,,,,,,,,,*/*,*/,,#........................</tspan>
-<tspan x="15" y="650">*/////*////////////,,,,,,,,,,,,,,,,,,*#*,,,,,,/*,,,,,/(.........................</tspan>
-<tspan x="15" y="670">*//*////////////*/,,,,,,,,,,,,,,,,,,#@@@@#,,*(,,,,,.*...........................</tspan>
+<tspan id="ascii-row-1" x="15" y="30">*****,,....,,,******,,**//****************,,**.               ,,.,,,.,,,........</tspan>
+<tspan id="ascii-row-2" x="15" y="50">**************,**/*******,*********************.              .****,,,,,,,,,,,,,</tspan>
+<tspan id="ascii-row-3" x="15" y="70">**********,,,,*,,**/**//**,,,,*//***////////**/*.              ,***,,,,,,*,,*,**</tspan>
+<tspan id="ascii-row-4" x="15" y="90">********,****,**,,*/*********///************,..,,.              ,*,,,,,,,*,,****</tspan>
+<tspan id="ascii-row-5" x="15" y="110">*******,,********/(##(((////////*****//***,......,,.             ,,,,,,,,,**,,,,</tspan>
+<tspan id="ascii-row-6" x="15" y="130">***********,**,*/(######(/***/////***##//*...,,*,,,,**,,          ...,,,,,,,,,,,</tspan>
+<tspan id="ascii-row-7" x="15" y="150">*,,,************(######(/******/****%%#(**...,,.,,.....,,,,,*.     ,,***,......,</tspan>
+<tspan id="ascii-row-8" x="15" y="170">****************(#######(//*******/@&amp;%##(*....     . ....,,...,,,,..**,,,,,,,,,,</tspan>
+<tspan id="ascii-row-9" x="15" y="190">****,,*,,,,*****/#%##%%%%%%%%##@@&amp;&amp;&amp;%#((#%&amp;&amp;%(******////////****,,   .,,,,,,,,,,</tspan>
+<tspan id="ascii-row-10" x="15" y="210">*****,,,**,/##%%%%%%%%,.*%####((((//%@@@@@@@@&amp;&amp;(///*//////*...#%,,,,,.....,,,,,,</tspan>
+<tspan id="ascii-row-11" x="15" y="230">,,,,*/*/##%%%%%%%%%%(.,*##/**/(((#((&amp;@@@@@@@%**#(////////...*,.*%((*............</tspan>
+<tspan id="ascii-row-12" x="15" y="250">*(###%#%%%%%%%#/*******%@@&amp;%%#%@@@@@@@%*,*#&amp;&amp;@@@&amp;#//*,.....,/**/,...............</tspan>
+<tspan id="ascii-row-13" x="15" y="270">###%%%%%%%%%(****//(((&amp;@@@@@@@@@@@@@@@@&amp;&amp;@@@@@%((#(,..,,..*/**,.................</tspan>
+<tspan id="ascii-row-14" x="15" y="290">%%%%%%%%%%%(////*///(@@@@@@@@@@@@@@@&amp;%%%%%%&amp;&amp;@@@@@@@&amp;(..(&amp;%#(,...............,..</tspan>
+<tspan id="ascii-row-15" x="15" y="310">######%#(/****///(&amp;@@@@@@@@@@@@@@@@&amp;%###(((/&amp;@@@@@&amp;%%#,.......................,#</tspan>
+<tspan id="ascii-row-16" x="15" y="330">#####(////***/&amp;@@@@@@@@@@@@@@@@@@@@@@@@@&amp;&amp;%#(%&amp;@@@&amp;#(/....................**,/*.</tspan>
+<tspan id="ascii-row-17" x="15" y="350">###(///((%&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;&amp;@%#(((//...........,.......*,.,#.  </tspan>
+<tspan id="ascii-row-18" x="15" y="370">&amp;%(((((((&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;&amp;#(/,.....................,(*....</tspan>
+<tspan id="ascii-row-19" x="15" y="390">(((/((/(%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;%#(*................,.....,#.. ...</tspan>
+<tspan id="ascii-row-20" x="15" y="410">@%#%%%&amp;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;%#/*................,.....,(*.......</tspan>
+<tspan id="ascii-row-21" x="15" y="430">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;%%#/,.................,.....,#.........</tspan>
+<tspan id="ascii-row-22" x="15" y="450">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&amp;#(/,.     ............,,....,/*..........</tspan>
+<tspan id="ascii-row-23" x="15" y="470">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%/,.   .  .......,,.....,#............</tspan>
+<tspan id="ascii-row-24" x="15" y="490">@@@@@@@@&amp;@@@@@&amp;&amp;@&amp;&amp;&amp;&amp;@@@@@@@@@@@@@@@@@@@@@@@@@&amp;#*,........,,....,/*.............</tspan>
+<tspan id="ascii-row-25" x="15" y="510">@@&amp;&amp;&amp;&amp;&amp;&amp;&amp;%%%%&amp;&amp;%%%%%#%#%&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;@@@@@@@@@@@@@@@@@@@@&amp;(,,,*,.,..,#...............</tspan>
+<tspan id="ascii-row-26" x="15" y="530">%%&amp;%%%%&amp;%%#######(#(///****///(##%&amp;&amp;&amp;@@@@@@@@@@@@@@@@@@@@@@@@#//................</tspan>
+<tspan id="ascii-row-27" x="15" y="550">%%%%%######((((///*,,....,,.    ...,,*/(/#%&amp;@@@@@@@@@@@@@@@@*#,.................</tspan>
+<tspan id="ascii-row-28" x="15" y="570">####(####(////*,......,**/,....... .   . ....,/**//#&amp;@@@@@#//...................</tspan>
+<tspan id="ascii-row-29" x="15" y="590">((((///*,,.,,,*****////*/,,,,,,...................,,...,**#.....................</tspan>
+<tspan id="ascii-row-30" x="15" y="610">/**,..,**/*/////////*//,,,,,,,,,,,,,,,,,,,,,,,,,,/*,...,//......................</tspan>
+<tspan id="ascii-row-31" x="15" y="630">***//**////////////***,,,,,,,,,,,,,,,,,,,,,,,,,*/*,*/,,#........................</tspan>
+<tspan id="ascii-row-32" x="15" y="650">*/////*////////////,,,,,,,,,,,,,,,,,,*#*,,,,,,/*,,,,,/(.........................</tspan>
+<tspan id="ascii-row-33" x="15" y="670">*//*////////////*/,,,,,,,,,,,,,,,,,,#@@@@#,,*(,,,,,.*...........................</tspan>
 
 </text>
 
-<text x="750" y="30" fill="#c9d1d9">
-<tspan x="750" y="30">Ali@eren</tspan>
-<tspan x="750" y="50">——————</tspan>
-<tspan x="750" y="70" class="keyColor">OS</tspan>: <tspan class="valueColor">Arch Linux, Android</tspan>
-<tspan x="750" y="90" class="keyColor">Uptime</tspan>: <tspan class="valueColor">22 years, 1 month, 17 days </tspan>
-<tspan x="750" y="110" class="keyColor">Host</tspan>: <tspan class="valueColor">Alexandria University Faculty of Engineering</tspan>
-<tspan x="750" y="130" class="keyColor">Kernel</tspan>: <tspan class="valueColor">Department of Electronics and Communications</tspan>
-<tspan x="750" y="150" class="keyColor">IDE</tspan>: <tspan class="valueColor">NVim, VSCode, MblapX</tspan>
-<tspan x="750" y="190" class="keyColor">Languages</tspan>.<tspan class="keyColor">Programming</tspan>: <tspan class="valueColor">C, Python, C++, JS, TS</tspan>
-<tspan x="750" y="210" class="keyColor">Languages</tspan>.<tspan class="keyColor">Frameworks</tspan>: <tspan class="valueColor">React, NextJs, tw, Express, Pytorch</tspan>
-<tspan x="750" y="270" class="keyColor">Hobbies</tspan>.<tspan class="keyColor">Software</tspan>: <tspan class="valueColor">Web Dev, Machine Learning, Game Dev</tspan>
-<tspan x="750" y="290" class="keyColor">Hobbies</tspan>.<tspan class="keyColor">Hardware</tspan>: <tspan class="valueColor">General Embedded Systems stuff</tspan>
-<tspan x="750" y="330" class="keyColor">Contact</tspan>:
-<tspan x="750" y="350">——————</tspan>
-<tspan x="750" y="370" class="keyColor">Email</tspan>: <tspan class="valueColor">alimedhat000@gmail.com</tspan>
-<tspan x="750" y="390" class="keyColor">LinkedIn</tspan>: <tspan class="valueColor">Alimedhat000</tspan>
-<tspan x="750" y="410" class="keyColor">LeetCode</tspan>: <tspan class="valueColor">alisensei000</tspan>
-<tspan x="750" y="430" class="keyColor">Discord</tspan>: <tspan class="valueColor">itsnotme000</tspan>
-<tspan x="750" y="470" class="keyColor">GitHub Stats</tspan>:
-<tspan x="750" y="490">——————</tspan>
-<tspan x="750" y="510" class="keyColor">Repos</tspan>: <tspan class="valueColor">31</tspan>
-<tspan x="750" y="530" class="keyColor">Commits</tspan>: <tspan class="valueColor">815</tspan>
-<tspan x="750" y="550" class="keyColor">Lines Of Code</tspan>: <tspan class="valueColor">Many, Many Lines</tspan>
+<text id="info-panel" x="750" y="30" fill="#c9d1d9">
+<tspan id="username" x="750" y="30">Ali@eren</tspan>
+<tspan id="sep-1" x="750" y="50">——————</tspan>
+<tspan id="key-os" x="750" y="70" class="keyColor">OS</tspan>: <tspan id="val-os" class="valueColor">Arch Linux, Android</tspan>
+<tspan id="key-uptime" x="750" y="90" class="keyColor">Uptime</tspan>: <tspan id="val-uptime" class="valueColor">22 years, 1 month, 19 days </tspan>
+<tspan id="key-host" x="750" y="110" class="keyColor">Host</tspan>: <tspan id="val-host" class="valueColor">Alexandria University Faculty of Engineering</tspan>
+<tspan id="key-kernel" x="750" y="130" class="keyColor">Kernel</tspan>: <tspan id="val-kernel" class="valueColor">Department of Electronics and Communications</tspan>
+<tspan id="key-ide" x="750" y="150" class="keyColor">IDE</tspan>: <tspan id="val-ide" class="valueColor">NVim, VSCode, MblapX</tspan>
+<tspan id="key-lang-prog" x="750" y="190" class="keyColor">Languages</tspan>.<tspan id="key-lang-prog-2" class="keyColor">Programming</tspan>: <tspan id="val-lang-prog" class="valueColor">C, Python, C++, JS, TS</tspan>
+<tspan id="key-lang-fw" x="750" y="210" class="keyColor">Languages</tspan>.<tspan id="key-lang-fw-2" class="keyColor">Frameworks</tspan>: <tspan id="val-lang-fw" class="valueColor">React, NextJs, tw, Express, Pytorch</tspan>
+<tspan id="key-hobbies-sw" x="750" y="270" class="keyColor">Hobbies</tspan>.<tspan id="key-hobbies-sw-2" class="keyColor">Software</tspan>: <tspan id="val-hobbies-sw" class="valueColor">Web Dev, Machine Learning, Game Dev</tspan>
+<tspan id="key-hobbies-hw" x="750" y="290" class="keyColor">Hobbies</tspan>.<tspan id="key-hobbies-hw-2" class="keyColor">Hardware</tspan>: <tspan id="val-hobbies-hw" class="valueColor">General Embedded Systems stuff</tspan>
+<tspan id="key-contact" x="750" y="330" class="keyColor">Contact</tspan>:
+<tspan id="sep-2" x="750" y="350">——————</tspan>
+<tspan id="key-email" x="750" y="370" class="keyColor">Email</tspan>: <tspan id="val-email" class="valueColor">alimedhat000@gmail.com</tspan>
+<tspan id="key-linkedin" x="750" y="390" class="keyColor">LinkedIn</tspan>: <tspan id="val-linkedin" class="valueColor">Alimedhat000</tspan>
+<tspan id="key-leetcode" x="750" y="410" class="keyColor">LeetCode</tspan>: <tspan id="val-leetcode" class="valueColor">alisensei000</tspan>
+<tspan id="key-discord" x="750" y="430" class="keyColor">Discord</tspan>: <tspan id="val-discord" class="valueColor">itsnotme000</tspan>
+<tspan id="key-stats" x="750" y="470" class="keyColor">GitHub Stats</tspan>:
+<tspan id="sep-3" x="750" y="490">——————</tspan>
+<tspan id="key-repos" x="750" y="510" class="keyColor">Repos</tspan>: <tspan id="val-repos" class="valueColor">31</tspan>
+<tspan id="key-commits" x="750" y="530" class="keyColor">Commits</tspan>: <tspan id="val-commits" class="valueColor">815</tspan>
+<tspan id="key-loc" x="750" y="550" class="keyColor">Lines Of Code</tspan>: <tspan id="val-loc" class="valueColor">Many, Many Lines</tspan>
 
 
 </text>

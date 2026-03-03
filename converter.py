@@ -1,4 +1,5 @@
 """A program to convert images to ASCII art."""
+
 from collections.abc import Sequence
 from typing import Optional
 import os
@@ -13,14 +14,13 @@ from string import ascii_letters, digits, punctuation
 CONVERSION_CHARACTERS = punctuation + " "
 
 # Replace the problematic font loading with a system font
-if os.name == 'nt':  # Windows
+if os.name == "nt":  # Windows
     base_font = ImageFont.truetype("arial.ttf", 20)
 else:  # Linux/Mac
     base_font = ImageFont.load_default()
 
 
-def sizeof(text: str,
-           font: ImageFont.FreeTypeFont = base_font) -> tuple[int, int]:
+def sizeof(text: str, font: ImageFont.FreeTypeFont = base_font) -> tuple[int, int]:
     """
     Get the size of the text when rendered in the given font in pixels.
 
@@ -46,8 +46,7 @@ def sizeof(text: str,
     return width, height
 
 
-def ascii_to_image(text: str,
-                   font: ImageFont.FreeTypeFont = base_font) -> Image.Image:
+def ascii_to_image(text: str, font: ImageFont.FreeTypeFont = base_font) -> Image.Image:
     """
     Convert the given text to an image using the given font.
 
@@ -78,8 +77,7 @@ def ascii_to_image(text: str,
     return text_image
 
 
-def get_brightness_of_char(char: str,
-                           font: ImageFont.FreeTypeFont = base_font) -> int:
+def get_brightness_of_char(char: str, font: ImageFont.FreeTypeFont = base_font) -> int:
     """
     Get the brightness of the given character when rendered in the given font.
 
@@ -108,10 +106,17 @@ def get_brightness_of_char(char: str,
     return (np.array(image) != 0).sum().item()
 
 
-sorted_letters = sorted(
-    CONVERSION_CHARACTERS,
-    key=lambda char: (get_brightness_of_char(char), char),
-)
+_sorted_letters: list[str] | None = None
+
+
+def _get_sorted_letters() -> list[str]:
+    global _sorted_letters
+    if _sorted_letters is None:
+        _sorted_letters = sorted(
+            CONVERSION_CHARACTERS,
+            key=lambda char: (get_brightness_of_char(char), char),
+        )
+    return _sorted_letters
 
 
 def image_to_ascii(
@@ -174,24 +179,22 @@ def image_to_ascii(
     image = image.convert("RGB")
 
     if sort_chars and charset:
-        charset = sorted(charset,
-                         key=lambda char: (get_brightness_of_char(char), char))
-    charset = charset or sorted_letters
+        charset = sorted(charset, key=lambda char: (get_brightness_of_char(char), char))
+    charset = charset or _get_sorted_letters()
 
     image_width, image_height = size or image.size
 
     if isinstance(scale, int | float):
-        scale = (scale, ) * 2
+        scale = (scale,) * 2
     image_width = int(image_width * scale[0] * (bool(fix_scaling) + 1))
     image_height = int(image_height * scale[1])
 
     scaled_image = image.resize((image_width, image_height))
-    brightened_image = ImageEnhance.Brightness(scaled_image).enhance(
-        brightness)
-    sharpened_image = ImageEnhance.Sharpness(brightened_image).enhance(
-        sharpness)
-    image_array = np.array(sharpened_image.convert("L"),
-                           dtype=int) * len(charset) // 256
+    brightened_image = ImageEnhance.Brightness(scaled_image).enhance(brightness)
+    sharpened_image = ImageEnhance.Sharpness(brightened_image).enhance(sharpness)
+    image_array = (
+        np.array(sharpened_image.convert("L"), dtype=int) * len(charset) // 256
+    )
 
     # Create mask for transparent pixels (alpha < 128)
     transparent_mask = alpha < 128
@@ -205,7 +208,7 @@ def image_to_ascii(
     ascii_converted = ascii_converted.reshape(image_height, image_width)
 
     # Apply transparency mask
-    ascii_converted[transparent_mask] = ' '
+    ascii_converted[transparent_mask] = " "
 
     output = "\n".join(map("".join, ascii_converted))
     if colorful:
