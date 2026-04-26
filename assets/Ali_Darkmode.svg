@@ -52,7 +52,7 @@ text, tspan { white-space: pre; fill: #c0caf5; } /* default text */
 <tspan id="username" x="810" y="30">Ali@eren</tspan>
 <tspan id="sep-1" x="810" y="50">——————</tspan>
 <tspan id="key-os" x="810" y="70" class="keyColor">OS</tspan>: <tspan id="val-os" class="valueColor">Arch Linux, Android</tspan>
-<tspan id="key-uptime" x="810" y="90" class="keyColor">Uptime</tspan>: <tspan id="val-uptime" class="valueColor">22 years, 3 months, 7 days </tspan>
+<tspan id="key-uptime" x="810" y="90" class="keyColor">Uptime</tspan>: <tspan id="val-uptime" class="valueColor">22 years, 3 months, 14 days </tspan>
 <tspan id="key-host" x="810" y="110" class="keyColor">Host</tspan>: <tspan id="val-host" class="valueColor">Alexandria University Faculty of Engineering</tspan>
 <tspan id="key-kernel" x="810" y="130" class="keyColor">Kernel</tspan>: <tspan id="val-kernel" class="valueColor">Department of Electronics and Communications</tspan>
 <tspan id="key-ide" x="810" y="150" class="keyColor">IDE</tspan>: <tspan id="val-ide" class="valueColor">NVim, VSCode, MblapX</tspan>
@@ -69,7 +69,7 @@ text, tspan { white-space: pre; fill: #c0caf5; } /* default text */
 <tspan id="key-stats" x="810" y="470" class="keyColor">GitHub Stats</tspan>:
 <tspan id="sep-3" x="810" y="490">——————</tspan>
 <tspan id="key-repos" x="810" y="510" class="keyColor">Repos</tspan>: <tspan id="val-repos" class="valueColor">29</tspan>
-<tspan id="key-commits" x="810" y="530" class="keyColor">Commits</tspan>: <tspan id="val-commits" class="valueColor">821</tspan>
+<tspan id="key-commits" x="810" y="530" class="keyColor">Commits</tspan>: <tspan id="val-commits" class="valueColor">827</tspan>
 <tspan id="key-loc" x="810" y="550" class="keyColor">Lines Of Code</tspan>: <tspan id="val-loc" class="valueColor">Many, Many Lines</tspan>
 
 
